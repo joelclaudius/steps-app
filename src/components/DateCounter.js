@@ -1,8 +1,33 @@
 import { useReducer } from "react";
-import { useQuiz } from "../context/QuizContext";
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "dec":
+      return { ...state, count: state.count - state.step };
+
+    case "inc":
+      return { ...state, count: state.count + state.step };
+
+    case "setCount":
+      return { ...state, count: action.payload };
+
+    case "setStep":
+      return { ...state, step: action.payload };
+
+    case "reset":
+      return { count: 0, step: 1 };
+
+    default:
+      throw new Error("Unknown action");
+  }
+}
 
 function DateCounter() {
-  const { step, count } = useQuiz();
+  const initialState = { count: 0, step: 1 };
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const { count, step } = state;
+
   // This mutates the date object.
   const date = new Date("june 21 2027");
   date.setDate(date.getDate() + count);
