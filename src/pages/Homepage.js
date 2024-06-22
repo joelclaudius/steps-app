@@ -18,7 +18,7 @@ export default function Homepage() {
           topics. Track your progress, compete with friends, and become a quiz
           master!
         </h2>
-        <Link to="/login" className="cta">
+        <Link to="/app" className="cta">
           Start a Quiz Now
         </Link>
       </section>

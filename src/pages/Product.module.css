@@ -1,8 +1,10 @@
+/* Product.module.css */
 .product {
   margin: 2.5rem;
   padding: 2.5rem 5rem;
   background-color: var(--color-dark--1);
   min-height: calc(100vh - 5rem);
+  color: var(--color-light--2); /* Ensure text contrast on dark background */
 }
 
 .product section {
@@ -16,6 +18,7 @@
 
 .product img {
   width: 100%;
+  border-radius: 10px; /* Optional: add a slight rounding to the image corners */
 }
 
 .product h2 {
@@ -30,5 +33,65 @@
 }
 
 .product section a {
+  display: inline-block;
+  padding: 1rem 2rem;
   margin-top: 2rem;
+  font-size: 1.6rem;
+  color: var(--color-light--2);
+  background-color: var(--color-primary);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.product section a:hover {
+  background-color: var(--color-primary-dark); /* Darker shade on hover */
+}
+
+/* Features List */
+.features {
+  list-style: none; /* Remove default list style */
+  padding-left: 0; /* Remove default padding */
+  margin-top: 2rem; /* Space above the list */
+  margin-bottom: 2rem; /* Space below the list */
+  font-size: 1.6rem; /* Match paragraph font size */
+  color: var(--color-light--1); /* Ensure it stands out on dark background */
+}
+
+.features li {
+  display: flex; /* Align items horizontally */
+  align-items: center; /* Center vertically */
+  margin-bottom: 1rem; /* Space between list items */
+  padding-left: 0.5rem; /* Add padding to prevent text from being too close to the edge */
+}
+
+.icon {
+  color: var(--color-light--2); /* Icon color to match the theme */
+  margin-right: 1rem; /* Space between icon and text */
+  font-size: 1.5rem; /* Icon size */
+}
+
+@media (max-width: 768px) {
+  .product section {
+    grid-template-columns: 1fr; /* Change to single column layout on small screens */
+    text-align: center; /* Center text for a better mobile layout */
+    gap: 3rem; /* Reduce gap on mobile for better fit */
+  }
+
+  .product img {
+    margin: 0 auto; /* Center the image */
+  }
+
+  .product h2 {
+    font-size: 3rem;
+  }
+
+  .product p,
+  .features li {
+    font-size: 1.4rem; /* Adjust font size for smaller screens */
+  }
+
+  .icon {
+    font-size: 1.3rem; /* Adjust icon size for smaller screens */
+  }
 }
