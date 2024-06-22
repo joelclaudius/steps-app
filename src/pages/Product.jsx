@@ -36,7 +36,7 @@ export default function Product() {
           </p>
         </div>
       </section>
-      <footer>
+      <footer className="flex justify-center">
         <Button type="primary">Sign Up Now</Button>
       </footer>
     </main>

@@ -7,7 +7,7 @@ export default function Product() {
   return (
     <main className={styles.product}>
       <PageNav />
-      <section>
+      <section className="md:px-10">
         <div>
           <h2>
             Simple Pricing.
@@ -39,16 +39,15 @@ export default function Product() {
           <p>Join today and start mastering your knowledge with QuizMaster!</p>
         </div>
         <div
-          className="h-full bg-cover bg-center rounded-xl md:px-10"
+          className="h-full bg-cover bg-center rounded-xl "
           style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL}/product.avif)`,
+            backgroundImage: `url(${process.env.PUBLIC_URL}/pricing.avif)`,
           }}
         ></div>
-        <footer>
-          {" "}
-          <Button type="primary">Sign Up Now</Button>
-        </footer>
       </section>
+      <footer className="flex justify-center">
+        <Button type="primary">Sign Up Now</Button>
+      </footer>
     </main>
   );
 }
