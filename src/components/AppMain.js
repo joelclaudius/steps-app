@@ -12,7 +12,7 @@ import Footer from "./Footer";
 import Timer from "./Timer";
 import { useQuiz } from "../context/QuizContext";
 
-export default function App() {
+export default function AppMain() {
   const { status } = useQuiz();
 
   return (
